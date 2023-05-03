@@ -18,7 +18,8 @@ const html = document.querySelector("body");
 
 if(html){
     const newElement = document.createElement('h6');
-    newElement.textContent = citations[0];
+    let randomNumber = Math.ceil(Math.random() * citations.length-1) ;
+    newElement.textContent = citations[randomNumber];
     html.appendChild(newElement);
 }
 const head = document.querySelector('head');
