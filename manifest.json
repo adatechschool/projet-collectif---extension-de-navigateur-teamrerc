@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "citations",
+    "version": "1.0",
+    "description": "Affiche des citations",
+    "icons": {
+        "24": "./images/lightbulb.png"
+    },
+    "content_scripts":[
+        {
+            "js":["./scripts/citation.js"],
+            "matches":[ 
+                "https://*/*",
+                "http://*/*"
+            ]
+        }
+    ]
+    
+
+}
