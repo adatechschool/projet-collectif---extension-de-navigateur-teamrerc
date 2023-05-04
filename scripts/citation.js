@@ -13,31 +13,60 @@ const citations = [
 
 ]
 
-const html = document.querySelector("body");
-
-
-if(html){
-    const newElement = document.createElement('h6');
-    let randomNumber = Math.ceil(Math.random() * citations.length-1) ;
-    newElement.textContent = citations[randomNumber];
-    html.appendChild(newElement);
-}
-const head = document.querySelector('head');
-const style = document.createElement('style');
-style.innerHTML = `
-    h6 {
-       position: fixed;
-       bottom: 0px;
-       right: 150px;
-       z-index: 4; 
-       background-color: red;
-       color: black;
-       margin-bottom:0px;
-
-    } 
-    `;
-head.appendChild(style);
-
-//nouvelle ligne de code
-
+setInterval(() => {
+    
+    const html = document.querySelector("body");
+    
+    
+    if(html){
+        const newElement = document.createElement('h6');
+        const span = document.createElement('span');
+        const div = document.createElement('div');
+    
+        let randomNumber = Math.ceil(Math.random() * citations.length-1) ;
+        span.textContent = "💡";
+        newElement.textContent = citations[randomNumber];
+        div.className += 'CamilleClaraSteve'
+        html.appendChild(div);
+        div.appendChild(span)
+        div.appendChild(newElement)
+    }
+    const head = document.querySelector('head');
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+    
+        .CamilleClaraSteve {
+            position: fixed;
+            bottom: 0px;
+            right: 150px;
+            z-index: 4;
+            color: black;
+            margin-bottom: 0px;
+            clip-path: circle(8% at 91.5% 30%);
+            transition: all 0.5s ease-in-out;
+            border-radius: 10px;
+            padding: 10px;
+            width: 250px;
+            height: 100px;
+            text-align: center;
+            background: rgb(255,255,207);
+            background: radial-gradient(circle, rgba(255,255,207,0.7036064425770308) 13%, rgba(247,197,126,1) 84%);
+        }
+        .CamilleClaraSteve:hover {
+            clip-path: circle(75%);
+        }
+        .CamilleClaraSteve span {
+            float: right;
+            position: relative;
+            margin-right: 2%;
+        }
+        .CamilleClaraSteve h6 {
+            padding-top: 20px;
+            font-size: 14px;
+            font-family: 'Gochi Hand', cursive;
+        }
+        `;
+    head.appendChild(style);
+}, 10000);
 
