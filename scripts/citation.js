@@ -38,11 +38,10 @@ setInterval(() => {
     
         .CamilleClaraSteve {
             position: fixed;
-            bottom: 0px;
-            right: 150px;
+            bottom: 15px;
+            right: 0px;
             z-index: 4;
             color: black;
-            margin-bottom: 0px;
             clip-path: circle(8% at 91.5% 30%);
             transition: all 0.5s ease-in-out;
             border-radius: 10px;
@@ -68,5 +67,5 @@ setInterval(() => {
         }
         `;
     head.appendChild(style);
-}, 10000);
+}, 1000);
 
