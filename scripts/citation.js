@@ -13,23 +13,33 @@ const citations = [
 
 ]
 
-setInterval(() => {
+// setInterval(() => {
     
     const html = document.querySelector("body");
     
     
     if(html){
-        const newElement = document.createElement('h6');
-        const span = document.createElement('span');
         const div = document.createElement('div');
-    
-        let randomNumber = Math.ceil(Math.random() * citations.length-1) ;
-        span.textContent = "💡";
-        newElement.textContent = citations[randomNumber];
         div.className += 'CamilleClaraSteve'
+        const span = document.createElement('span');
+        span.textContent = "💡";
+        span.className += "spanCitation"
         html.appendChild(div);
         div.appendChild(span)
-        div.appendChild(newElement)
+        
+        
+        document.querySelector(".spanCitation").addEventListener("mouseover", () =>{
+
+            let randomNumber = Math.ceil(Math.random() * citations.length-1) ;
+            const newElement = document.createElement('h6');
+            newElement.textContent = citations[randomNumber];
+            div.appendChild(newElement)
+            document.querySelector(".spanCitation").addEventListener("mouseleave", () =>{
+                div.removeChild(newElement)
+    
+            })
+        })
+
     }
     const head = document.querySelector('head');
     const style = document.createElement('style');
@@ -67,5 +77,5 @@ setInterval(() => {
         }
         `;
     head.appendChild(style);
-}, 1000);
+// }, 1000);
 
