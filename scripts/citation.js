@@ -29,15 +29,23 @@ const citations = [
         
         
         document.querySelector(".spanCitation").addEventListener("mouseover", () =>{
-
-            let randomNumber = Math.ceil(Math.random() * citations.length-1) ;
+            let randomNumber = Math.ceil(Math.random() * 10-1) ;
+            
+            fetch('http://localhost:5000/citations2')
+            .then(response => response.json())
+            .then((data) => {
+                console.log(data[randomNumber].message)
+                
             const newElement = document.createElement('h6');
-            newElement.textContent = citations[randomNumber];
+            newElement.textContent = data[randomNumber].message;
             div.appendChild(newElement)
             document.querySelector(".spanCitation").addEventListener("mouseleave", () =>{
                 div.removeChild(newElement)
     
             })
+            })
+            .catch(error => console.log(error));
+
         })
 
     }
