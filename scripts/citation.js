@@ -50,7 +50,6 @@ const citations = [
     const style = document.createElement('style');
     style.innerHTML = `
     @import url('https://fonts.googleapis.com/css2?family=Asap:wght@200&display=swap');
-    @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Pacifico&family=Pangolin&display=swap");
   
 
         .CamilleClaraSteve {
@@ -71,9 +70,9 @@ const citations = [
                 position: fixed;
                 bottom: 15px;
                 right: 0px;
-                z-index: 4;
+                z-index: 1000;
                 color: black;
-                clip-path: circle(8% at 91.5% 15%);
+                clip-path: circle(8% at 91% 22%);
                 transition: all 0.5s ease-in-out;
                 border-radius: 10px;
                 padding: 10px;
@@ -97,8 +96,8 @@ const citations = [
             
         }
         .CamilleClaraSteve h6 {
-            padding-top: 20px;
-            font-size: 14px;
+            padding-top: 10px;
+            font-size: 12px;
             font-family: 'asap', cursive;
             
         }
